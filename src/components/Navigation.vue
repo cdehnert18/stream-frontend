@@ -1,7 +1,17 @@
 <template>
-  <nav class="navbar navbar-expand">
-    <div class="container">
+  <nav class="navbar navbar-expand w-100">
+    <div class="container-fluid">
       <a href="#" class="navbar-brand">stream</a>
+
+      <!-- Search Bar -->
+      <input
+        class="form-control me-4 flex-grow-1"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+
+      <!-- Navigation Links -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <router-link to="/" class="nav-link" active-class="active">Home</router-link>
