@@ -1,5 +1,12 @@
+<script setup lang="ts">
+import Comment from '../components/Comment.vue'
+</script>
+
 <template>
-  <h1>home</h1>
+  <div class="container my-5">
+    <h1 class="mb-4">Home</h1>
+    <Comment />
+  </div>
 </template>
 
 <script lang="ts">
