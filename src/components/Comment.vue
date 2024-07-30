@@ -1,7 +1,7 @@
 <template>
-  <div class="container my-5">
+  <div class="container my-1">
     <div class="row justify-content-center">
-      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <div class="col">
         <div class="comment-card card shadow-sm my-3">
           <div class="card-body">
             <p class="card-text">{{ comment }}</p>

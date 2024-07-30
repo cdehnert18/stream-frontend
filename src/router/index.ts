@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Video from '../views/Video.vue'
 import Upload from '../views/Upload.vue'
 import Profile from '../views/Profile.vue'
 import Settings from '../views/Settings.vue'
@@ -11,6 +12,11 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/video',
+      name: 'Video',
+      component: Video
     },
     {
       path: '/upload',
