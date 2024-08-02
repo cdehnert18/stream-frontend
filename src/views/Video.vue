@@ -18,8 +18,8 @@ import Comment from '../components/Comment.vue'
       <!-- Video Details Section -->
 
       <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-lg-12 col-md-12 col-sm-auto">
+        <div class="row justify-content-between">
+          <div class="col-lg-12 col-md-12 col-sm-auto col-auto">
             <div class="video-details">
               <h3 class="mb-3">Beispieltitel</h3>
               <p class="mb-2 text-muted">Beispielbeschreibung</p>
@@ -27,7 +27,7 @@ import Comment from '../components/Comment.vue'
             </div>
           </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-auto">
+          <div class="col-lg-12 col-md-12 col-sm-auto col-auto">
             <button class="btn btn-primary">Like</button>
           </div>
         </div>

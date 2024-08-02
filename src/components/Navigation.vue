@@ -25,9 +25,13 @@
         <li class="nav-item">
           <router-link to="/settings" class="nav-link" active-class="active">Settings</router-link>
         </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-primary mx-2" type="submit">Login</button>
+        </li>
       </ul>
     </div>
   </nav>
+  <AuthModal ref="thisModal" />
 </template>
 
 <script lang="ts">
