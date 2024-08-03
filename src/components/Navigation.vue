@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ModalComponent from './ModalComponent.vue'
+import AuthModal from './AuthModal.vue'
 </script>
 
 <template>
@@ -41,14 +41,14 @@ import ModalComponent from './ModalComponent.vue'
       </ul>
     </div>
   </nav>
-  <ModalComponent />
+  <AuthModal />
 </template>
 
 <script lang="ts">
 export default {
   name: 'NavigationComponent',
   components: {
-    ModalComponent, // Registriere die Modal-Komponente
+    AuthModal, // Registriere die Modal-Komponente
   },
 }
 </script>
