@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5 min-vh-100">
+  <div class="container my-5">
     <h1 class="mb-4">Profile</h1>
 
     <!-- Username Section -->
