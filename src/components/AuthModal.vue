@@ -1,11 +1,11 @@
 <template>
   <div
       class="modal fade"
-      id="staticBackdrop"
+      id="authModal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
+      aria-labelledby="authModalLabel"
       aria-hidden="true"
     >
     <div class="modal-dialog">

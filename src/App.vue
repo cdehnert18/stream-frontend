@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import Navigation from './components/Navigation.vue'
+import ModalComponent from './components/ImprintModal.vue'
 
 const darkMode = ref(false)
 
@@ -34,7 +35,8 @@ onMounted(() => {
       <div class="container">
         <div class="row mb-2">
           <div class="col col d-flex justify-content-center align-items-center my-1">
-            <a href="/imprint" class="link-light link-underline-opacity-0">Imprint</a>
+            <a href="/#" class="link-light link-underline-opacity-0" data-bs-toggle="modal"
+            data-bs-target="#imprintModal">Imprint</a>
           </div>
           <div class="col col d-flex justify-content-center align-items-center my-1">
             <a href="/cookies" class="link-light link-underline-opacity-0">Cookies</a>
@@ -46,4 +48,5 @@ onMounted(() => {
       </div>
     </footer>
   </div>
+  <ModalComponent/>
 </template>

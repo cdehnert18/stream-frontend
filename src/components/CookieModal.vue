@@ -3,7 +3,7 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id="staticBackdrop2"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"

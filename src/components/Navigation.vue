@@ -34,7 +34,7 @@ import AuthModal from './AuthModal.vue'
             class="btn btn-outline-primary mx-2"
             type="button"
             data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop">
+            data-bs-target="#authModal">
             Login
           </button>
         </li>
@@ -48,7 +48,7 @@ import AuthModal from './AuthModal.vue'
 export default {
   name: 'NavigationComponent',
   components: {
-    AuthModal, // Registriere die Modal-Komponente
+    AuthModal,
   },
 }
 </script>
