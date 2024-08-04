@@ -42,6 +42,9 @@ onMounted(() => {
             <a href="/cookies" class="link-light link-underline-opacity-0">Cookies</a>
           </div>
           <div class="col col d-flex justify-content-center align-items-center my-1">
+            <a href="/privacy" class="link-light link-underline-opacity-0">Privacy</a>
+          </div>
+          <div class="col col d-flex justify-content-center align-items-center my-1">
             <a href="/about" class="link-light link-underline-opacity-0">About</a>
           </div>
         </div>
