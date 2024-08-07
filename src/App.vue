@@ -24,19 +24,24 @@ onMounted(() => {
   <div class="d-flex flex-column min-vh-100">
     <!-- Navigation-Komponente -->
     <Navigation />
-    
+
     <!-- Main-Bereich, der den freien Platz einnimmt -->
     <main class="flex-grow-1 d-flex">
       <RouterView />
     </main>
-    
+
     <!-- Footer -->
     <footer>
       <div class="container">
         <div class="row mb-2">
           <div class="col col d-flex justify-content-center align-items-center my-1">
-            <a href="/#" class="link-light link-underline-opacity-0" data-bs-toggle="modal"
-            data-bs-target="#imprintModal">Imprint</a>
+            <a
+              href="/#"
+              class="link-light link-underline-opacity-0"
+              data-bs-toggle="modal"
+              data-bs-target="#imprintModal"
+              >Imprint</a
+            >
           </div>
           <div class="col col d-flex justify-content-center align-items-center my-1">
             <a href="/cookies" class="link-light link-underline-opacity-0">Cookies</a>
@@ -51,5 +56,5 @@ onMounted(() => {
       </div>
     </footer>
   </div>
-  <ModalComponent/>
+  <ModalComponent />
 </template>
