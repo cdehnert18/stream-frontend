@@ -1,24 +1,33 @@
+<script setup lang="ts">
+import { login, register } from '../service/authService'
+</script>
+
 <template>
   <div
-      class="modal fade"
-      id="authModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="authModalLabel"
-      aria-hidden="true"
-    >
+    class="modal fade"
+    id="authModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="authModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="authModalLabel">
             {{ isLoginView ? 'Login' : 'Register' }}
           </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <!-- Login Form -->
-          <form v-if="isLoginView">
+          <form v-if="isLoginView" @submit.prevent="handleLogin">
             <div class="mb-3">
               <label for="login-email" class="form-label">Email address</label>
               <input
@@ -43,7 +52,7 @@
           </form>
 
           <!-- Registration Form -->
-          <form v-else>
+          <form v-else @submit.prevent="handleRegistration">
             <div class="mb-3">
               <label for="register-email" class="form-label">Email address</label>
               <input
@@ -118,6 +127,24 @@ export default {
   methods: {
     toggleView() {
       this.isLoginView = !this.isLoginView
+    },
+    async handleLogin() {
+      try {
+        const response = await login(this.loginForm)
+        console.log('Login successful:', response)
+
+      } catch (error) {
+        console.log('Login failed. Please check your credentials and try again');
+      }
+    },
+    async handleRegistration() {
+      try {
+        const response = await register(this.registerForm)
+        console.log('Registration successful:', response)
+
+      } catch (error) {
+        console.log('Registration failed. Please check your credentials and try again');
+      }
     }
   }
 }

@@ -1,33 +1,41 @@
-const API_URL = 'https://localhost:8080/api/'
+class CsrfTokenService {
+  private csrfToken: string | null = null;
 
-let csrfToken: string | null = null
+  public async initCsrf() {
+    try {
+      const response = await fetch(import.meta.env.VITE_API_URL + '/auth/csrf', {
+        method: 'GET',
+        credentials: 'include'
+      })
+  
+      if (!response.ok) {
+        throw new Error(`Failed to fetch CSRF token: ${response.statusText}`)
+      }
+  
+      this.csrfToken = response.headers.get('CSRF-TOKEN')
+  
+      if (!this.csrfToken) {
+        console.log(response.headers);
+        throw new Error('CSRF token not found in response headers.')
+      }
+  
+    } catch (error) {
+      console.error('Error fetching CSRF token:', error)
+      throw error
+    }
+  }
 
-export async function fetchCsrfToken(): Promise<string> {
-  try {
-    const response = await fetch(API_URL + 'auth/csrf', {
-      method: 'GET',
-      credentials: 'include'
-    })
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch CSRF token: ${response.statusText}`)
+  public getCsrfToken(): string {
+    if (!this.csrfToken) {
+      throw new Error('CSRF token not in storage.')
     }
 
-    csrfToken = response.headers.get('CSRF-TOKEN')
+    return this.csrfToken;
+  }
 
-    if (!csrfToken) {
-      console.log(response.headers);
-      throw new Error('CSRF token not found in response headers.')
-    }
-
-    console.log(`CSRF Token fetched: ${csrfToken}`)
-    return csrfToken
-  } catch (error) {
-    console.error('Error fetching CSRF token:', error)
-    throw error
+  public setCsrfToken(token: string): void {
+    this.csrfToken = token;
   }
 }
 
-export function getCsrfToken(): string | null {
-  return csrfToken
-}
+export default new CsrfTokenService();

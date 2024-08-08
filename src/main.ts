@@ -3,8 +3,9 @@ import './assets/global.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { fetchCsrfToken } from './service/csrfService';
+import csrfTokenService from './service/csrfService';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap'
 
 const app = createApp(App)
@@ -15,8 +16,7 @@ const app = createApp(App)
 
 async function initializeApp() {
   try {
-    await fetchCsrfToken()
-    console.log('CSRF token fetched successfully.')
+    csrfTokenService.initCsrf();
 
     app.use(router)
   } catch (error) {
